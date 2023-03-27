@@ -152,6 +152,8 @@ header {
       background-color: #FDDCC4;
       transition: all 0.3s ease-in-out; }
   .our-friends .card-info {
+    box-sizing: border-box;
+    max-width: 270px;
     padding: 30px 41.5px;
     border-bottom-right-radius: 9px;
     border-bottom-left-radius: 9px;
@@ -325,6 +327,11 @@ a {
     color: #FDDCC4;
     transition: all 0.3s ease-in-out; }
 
+.link-light-inactive {
+  color: #FDDCC4;
+  border-bottom: 3px solid #F1CDB3;
+  cursor: not-allowed; }
+
 .link-dark {
   color: #545454; }
   .link-dark:hover {
@@ -346,7 +353,7 @@ a {
   box-sizing: border-box;
   height: 52px;
   background-color: transparent;
-  padding: 14px 44px;
+  padding: 14px 40px;
   border-radius: 100px;
   color: #292929;
   font-size: 17px;
@@ -403,7 +410,7 @@ a {
   background-image: url(./assets/SVG/tick-right.svg); }
 
 .tick-double-right {
-  width: 23px;
+  width: 25px;
   height: 11px;
   background-image: url(./assets/SVG/tick-double-right.svg); }
 
@@ -414,7 +421,7 @@ a {
   transform: rotate(180deg); }
 
 .tick-double-left {
-  width: 23px;
+  width: 25px;
   height: 11px;
   background-image: url(./assets/SVG/tick-double-right.svg);
   transform: rotate(180deg); }
@@ -426,9 +433,9 @@ a {
 .inactive {
   background-color: transparent;
   border-color: #CDCDCD;
-  cursor: none; }
+  cursor: not-allowed; }
   .inactive span {
-    fill: #CDCDCD; }
+    filter: brightness(5); }
   .inactive:hover {
     background-color: transparent;
     border-color: #CDCDCD; }
@@ -444,5 +451,10 @@ a {
     border-color: #FDDCC4;
     background-color: #FDDCC4;
     transition: all 0.3s ease-in-out; }
+  .input-button:before {
+    display: block;
+    background-image: url(./assets/SVG/credit-card.svg);
+    width: 30px;
+    height: 23px; }
 
 /*# sourceMappingURL=style.css.map */
