@@ -35,9 +35,9 @@ $Georgia: Georgia, 'Times New Roman', Times, serif;
 .subtitle-normal {
     margin: 0;
     font: {
-        size: 16px;
-        font-family: $Arial;
-        font-weight: 400;
+        size: 15px;
+        family: $Arial;
+        weight: 400;
     }
     line-height: 24px;
     color: $color-dark-xl;
@@ -59,7 +59,8 @@ $Georgia: Georgia, 'Times New Roman', Times, serif;
     letter-spacing: 2px;
 }
 
-//main 
+//main part
+
 html {
     scroll-behavior: smooth; 
 }
@@ -68,38 +69,37 @@ body {
     margin: 0;
 }
 
-
-
 main {
     margin: auto;
     display: flex;
     flex-direction: column;
 }
 
-section {
-    padding: 80px 40px 100px 40px;
-}
-
 .wrapper {
-    width: 100%;
     margin: auto;
+    width: 100%;
+    padding: 80px 40px 100px 40px;
     max-width: 1280px;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
-    
 }
+
 
 //sections
 
 header {
-    padding: 30px 40px 0 40px;
+    box-sizing: border-box;
+    
     .wrapper-nav {
-     align-items: center;
+        padding-top: 30px;
+        padding-bottom: 10px;
+        align-items: center;
     }
     .subtitle-normal {
-     margin-top: 42px;
-     max-width: 460px;
+        margin-top: 42px;
+        max-width: 460px;
+        margin-bottom: 57px;
     }
  }
 
@@ -107,35 +107,129 @@ header {
     @include background-start(); 
 }
 
-.pet-header {
+.pets-header {
     background-color: $color-light-xl;
+    padding-bottom: 20px;
 }
 
 .start {
-    @include background-start(); 
-    padding: 90px 0 0;
+    .wrapper {
+      padding-bottom: 0;  
+    }
 }
 
 .about {
     background-color: $color-light-xl;
     .wrapper {
-        padding: 0 175px; 
+        padding-left: 215px; 
+        padding-right: 215px;
     }
     .h2-title {
         padding-top: 14px;
+        padding-bottom: 24px;
     }
     .subtitle-normal {
-        padding-top: 24px;
         max-width: 430px;
-        letter-spacing: 1px;
+        //letter-spacing: 1px;
     }
+    .p-second {
+        padding-top: 25px;
+    }
+    img {
+        width: 300px;
+        height: 408px;
+
+    }
+}
+
+
+
+.our-friends{
+    background-color: $color-light-l;
+    .wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    .h2-title {
+        max-width: 400px;
+        text-align: center;
+        margin-bottom: 43px;
+    }
+
+    .slider {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding-bottom: 45px;
+    }
+    .card {
+        margin: 15px 0;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        &:hover {
+            .card-info {
+                background-color: $color-light-xl;
+                transition: all 0.3s ease-in-out;
+            }
+            .button {
+                background-color: $color-primary-light;
+                transition: all 0.3s ease-in-out;
+            }
+        }
+    }
+    .card-info {  
+        padding: 30px 41.5px;
+        border-bottom-right-radius: 9px;
+        border-bottom-left-radius: 9px;
+        background-color: $color-primary-light;
+        transition: all 0.3s ease-in-out;
+        
+        p {
+            color: $color-dark-l;
+            margin: 0;
+            text-align: center;
+            padding-bottom: 30px;
+            letter-spacing: 1px;
+            font: {
+                size: 20px;
+                family: $Georgia;
+                weight: 400;
+            }
+        }
+        button {
+            display: block;
+            margin: auto;
+        }
+    }
+
+    .modal-img {
+        width: 270px;
+        height: 270px;
+        border-top-right-radius: 9px;
+        border-top-left-radius: 9px;
+    }
+}
+
+.pets-cards-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .help {
     background-color: $color-light-xl;
+    .wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    .h2-title {
+        max-width: 310px;
+        text-align: center;
+    }
 }
 
-.our-friends, .donation {
+.donation {
     background-color: $color-light-l;
 }
 
@@ -167,8 +261,7 @@ header {
         weight: 400px;
     }
     line-height: 15px;
-    letter-spacing: 1.3px;
-    
+    letter-spacing: 1.3px; 
 }
 
 .logo-pets-subtitle {
@@ -186,6 +279,7 @@ header {
 
 //links
 a {
+    padding: 0;
     margin: 0;
     outline: none;
     text-decoration: none;
@@ -228,4 +322,36 @@ a {
     }
     line-height: 24px;
     margin-left: 35px;
+}
+
+//buttons
+
+.button {
+    box-sizing: border-box;
+    height: 52px;
+    background-color: transparent;
+    padding: 14px 44px;
+    border-radius: 100px;
+    color: $color-dark-3xl;
+    font: {
+        size: 17px;
+        family: $Georgia;
+        weight: 400;
+    }
+    line-height: 22px;
+    letter-spacing: 1.2px;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        background-color: $color-primary-light;
+        transition: all 0.3s ease-in-out;
+    }
+}
+.button-primary {
+    background-color: $color-primary;
+    transition: all 0.3s ease-in-out;
+}
+
+.button-secondary {
+    border: 2px solid #F1CDB3;
+    transition: all 0.3s ease-in-out;
 }
