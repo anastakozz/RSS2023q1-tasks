@@ -188,23 +188,23 @@ a {
 
 .link-light {
   color: #CDCDCD; }
-  .link-light:visited {
-    color: #CDCDCD; }
   .link-light:hover {
     color: #FDDCC4;
-    border-bottom: 3px solid #F1CDB3; }
+    border-bottom: 3px solid #F1CDB3;
+    transition: all 0.3s ease-in-out; }
   .link-light:active {
-    color: #FDDCC4; }
+    color: #FDDCC4;
+    transition: all 0.3s ease-in-out; }
 
 .link-dark {
   color: #545454; }
-  .link-dark:visited {
-    color: #545454; }
   .link-dark:hover {
     color: #292929;
-    border-bottom: 3px solid #F1CDB3; }
+    border-bottom: 3px solid #F1CDB3;
+    transition: all 0.3s ease-in-out; }
   .link-dark:active {
-    color: #545454; }
+    color: #545454;
+    transition: all 0.3s ease-in-out; }
 
 .nav-link {
   font-size: 15px;

@@ -288,29 +288,27 @@ a {
 
 .link-light {
     color: $color-dark-s;
-    &:visited {
-        color: $color-dark-s;
-    }
     &:hover {
         color: $color-primary-light;
         border-bottom: 3px solid $color-primary;
+        transition: all 0.3s ease-in-out;
     }
     &:active {
         color: $color-primary-light;
+        transition: all 0.3s ease-in-out;
     } 
 }
 
 .link-dark {
     color: $color-dark-l;
-    &:visited {
-        color: $color-dark-l;
-    }
     &:hover {
         color: $color-dark-3xl;
         border-bottom: 3px solid $color-primary;
+        transition: all 0.3s ease-in-out;
     }
     &:active {
         color: $color-dark-l;
+        transition: all 0.3s ease-in-out;
     }
 }
 
