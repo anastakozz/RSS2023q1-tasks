@@ -33,158 +33,161 @@
     />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header class="header main-header">
-      <div class="wrapper">
-        <div class="logo">
-          <a href="">
-            <span class="logo-title">Cozy House</span>
-            <span class="logo-subtitle">Shelter for pets in Boston</span>
-          </a>
-        </div>
+      <div class="wrapper wrapper-nav">
+        <a class="logo" href="">
+          <span class="logo-title">Cozy House</span>
+          <span class="logo-subtitle">Shelter for pets in Boston</span>
+        </a>
         <nav class="nav">
-          <a href="#about" class="nav-link">About the shelter</a>
-          <a href="pets.html" class="nav-link">Our pets</a>
-          <a href="#help" class="nav-link">Help the center</a>
-          <a href="#footer" class="nav-link">Contacts</a>
+          <a href="#about" class="nav-link link-light">About the shelter</a>
+          <a href="pets.html" class="nav-link link-light">Our pets</a>
+          <a href="#help" class="nav-link link-light">Help the center</a>
+          <a href="#footer" class="nav-link link-light">Contacts</a>
         </nav>
       </div>
+      <section class="start" id="start">
+        <div class="wrapper">
+          <div class="start-info">
+            <h1 class="h1-title">Not only people<br />need a house</h1>
+            <p class="subtitle-normal subtitle-light">
+              We offer to give a chance to a little and nice puppy with an
+              extremely wide and open heart. He or she will love you more than
+              anybody else in the world, you will see!
+            </p>
+            <a href="#pets" class="button button-primary">Make a friend</a>
+          </div>
+          <img
+            src="./assets/start-screen-puppy.png"
+            alt="puppy-img"
+            class="start-image"
+          />
+        </div>
+      </section>
     </header>
-    <section class="start" id="start">
-      <div class="wrapper">
-        <div class="start-info">
-          <h1 class="h1-title">Not only people need a house</h1>
-          <p class="subtitle-normal">
-            We offer to give a chance to a little and nice puppy with an
-            extremely wide and open heart. He or she will love you more than
-            anybody else in the world, you will see!
-          </p>
-          <a href="#pets" class="button button-primary">Make a friend</a>
-        </div>
-        <img
-          src="./assets/start-screen-puppy.png"
-          alt="puppy-img"
-          class="start-image"
-        />
-      </div>
-    </section>
-    <section class="about" id="about">
-      <div class="wrapper">
-        <img
-          src="./assets/about-pets.png"
-          alt="about-pets-img"
-          class="about-image"
-        />
-        <div class="about-info">
-          <h2 class="h2-title">About the shelter “Cozy House”</h2>
-          <p class="subtitle-normal">
-            Currently we have 121 dogs and 342 cats on our hands and statistics
-            show that only 20% of them will find a family. The others will
-            continue to live with us and will be waiting for a lucky chance to
-            become dearly loved.
-          </p>
-          <p class="subtitle-normal">
-            We feed our wards with the best food and make sure that they do not
-            get sick, feel comfortable (including psychologically) and well. We
-            are supported by 87 volunteers and 28 employees of various skill
-            levels. About 12% of the animals are taken by the shelter staff.
-            Taking care of the animals, they become attached to the pets and
-            would hardly ever leave them alone.
-          </p>
-        </div>
-      </div>
-    </section>
-    <section class="main-our-friends" id="pets">
-      <div class="wrapper">
-        <h2 class="h2-title">Our friends who are looking for a house</h2>
-        <div class="slider">
-          <button class="button-arrow"></button>
-          <div class="card">
-            <img src="" alt="" class="modal-img" />
-            <p class="pet-name"></p>
-            <button class="button button_secondarye">Learn more</button>
+    <main>
+      <section class="about" id="about">
+        <div class="wrapper">
+          <img
+            src="./assets/about-pets.png"
+            alt="about-pets-img"
+            class="about-image"
+          />
+          <div class="about-info">
+            <h2 class="h2-title">About the shelter<br />“Cozy House”</h2>
+            <p class="subtitle-normal">
+              Currently we have 121 dogs and 342 cats on our hands and
+              statistics show that only 20% of them will find a family. The
+              others will continue to live with us and will be waiting for a
+              lucky chance to become dearly loved.
+            </p>
+            <p class="subtitle-normal">
+              We feed our wards with the best food and make sure that they do
+              not get sick, feel comfortable (including psychologically) and
+              well. We are supported by 87 volunteers and 28 employees of
+              various skill levels. About 12% of the animals are taken by the
+              shelter staff. Taking care of the animals, they become attached to
+              the pets and would hardly ever leave them alone.
+            </p>
           </div>
-          <div class="card">
-            <img src="" alt="" class="modal-img" />
-            <p class="pet-name"></p>
-            <button class="button button_secondary">Learn more</button>
-          </div>
-          <div class="card">
-            <img src="" alt="" class="modal-img" />
-            <p class="pet-name"></p>
-            <button class="button button_secondary">Learn more</button>
-          </div>
-          <button class="button-arrow"></button>
         </div>
-        <a href="pets.html" class="button button-primary"
-          >Get to know the rest</a
-        >
-      </div>
-    </section>
-    <section class="help" id="help">
-      <div class="wrapper">
-        <h2 class="h2-title">How you can help our shelter</h2>
-        <ul class="help-list">
-          <li class="help-item">
-            <span class="help-list-logo pet-food"></span>
-            <p class="help-list-text">Pet food</p>
-          </li>
-          <li class="help-item">
-            <span class="help-list-logo transportation"></span>
-            <p class="help-list-text">Transportation</p>
-          </li>
-          <li class="help-item">
-            <span class="help-list-logo toys"></span>
-            <p class="help-list-text">Toys</p>
-          </li>
-          <li class="help-item">
-            <span class="help-list-logo bowls"></span>
-            <p class="help-list-text">Bowls and cups</p>
-          </li>
-          <li class="help-item">
-            <span class="help-list-logo shampoos"></span>
-            <p class="help-list-text">Shampoos</p>
-          </li>
-          <li class="help-item">
-            <span class="help-list-logo vitamins"></span>
-            <p class="help-list-text">Vitamins</p>
-          </li>
-          <li class="help-item">
-            <span class="help-list-logo medicines"></span>
-            <p class="help-list-text">Medicines</p>
-          </li>
-          <li class="help-item">
-            <span class="help-list-logo collars"></span>
-            <p class="help-list-text">Collars / leashes</p>
-          </li>
-          <li class="help-item">
-            <span class="help-list-logo sleeping"></span>
-            <p class="help-list-text">Sleeping areas</p>
-          </li>
-        </ul>
-      </div>
-    </section>
-    <section class="donation" id="donation">
-      <div class="wrapper">
-        <img
-          src="./assets/donation-dog.png"
-          alt="donation-img"
-          class="donation-image"
-        />
-        <div class="donation-info">
-          <h2 class="h2-title">You can also make a donation</h2>
-          <p class="subtitle-normal">Name of the bank / Type of bank account</p>
-          <button class="button credit-card"></button>
-          <p class="additional-text">
-            Legal information and lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Maecenas a ipsum at libero sagittis dignissim sed
-            ac diam. Praesent ultrices maximus tortor et vulputate. Interdum et
-            malesuada fames ac ante ipsum primis in faucibus.
-          </p>
+      </section>
+      <section class="our-friends" id="pets">
+        <div class="wrapper">
+          <h2 class="h2-title">Our friends who are looking for a house</h2>
+          <div class="slider">
+            <button class="button-arrow"></button>
+            <div class="card">
+              <img src="" alt="" class="modal-img" />
+              <p class="pet-name"></p>
+              <button class="button button_secondarye">Learn more</button>
+            </div>
+            <div class="card">
+              <img src="" alt="" class="modal-img" />
+              <p class="pet-name"></p>
+              <button class="button button_secondary">Learn more</button>
+            </div>
+            <div class="card">
+              <img src="" alt="" class="modal-img" />
+              <p class="pet-name"></p>
+              <button class="button button_secondary">Learn more</button>
+            </div>
+            <button class="button-arrow"></button>
+          </div>
+          <a href="pets.html" class="button button-primary"
+            >Get to know the rest</a
+          >
         </div>
-      </div>
-    </section>
+      </section>
+      <section class="help" id="help">
+        <div class="wrapper">
+          <h2 class="h2-title">How you can help our shelter</h2>
+          <ul class="help-list">
+            <li class="help-item">
+              <span class="help-list-logo pet-food"></span>
+              <p class="help-list-text">Pet food</p>
+            </li>
+            <li class="help-item">
+              <span class="help-list-logo transportation"></span>
+              <p class="help-list-text">Transportation</p>
+            </li>
+            <li class="help-item">
+              <span class="help-list-logo toys"></span>
+              <p class="help-list-text">Toys</p>
+            </li>
+            <li class="help-item">
+              <span class="help-list-logo bowls"></span>
+              <p class="help-list-text">Bowls and cups</p>
+            </li>
+            <li class="help-item">
+              <span class="help-list-logo shampoos"></span>
+              <p class="help-list-text">Shampoos</p>
+            </li>
+            <li class="help-item">
+              <span class="help-list-logo vitamins"></span>
+              <p class="help-list-text">Vitamins</p>
+            </li>
+            <li class="help-item">
+              <span class="help-list-logo medicines"></span>
+              <p class="help-list-text">Medicines</p>
+            </li>
+            <li class="help-item">
+              <span class="help-list-logo collars"></span>
+              <p class="help-list-text">Collars / leashes</p>
+            </li>
+            <li class="help-item">
+              <span class="help-list-logo sleeping"></span>
+              <p class="help-list-text">Sleeping areas</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="donation" id="donation">
+        <div class="wrapper">
+          <img
+            src="./assets/donation-dog.png"
+            alt="donation-img"
+            class="donation-image"
+          />
+          <div class="donation-info">
+            <h2 class="h2-title">You can also make a donation</h2>
+            <p class="subtitle-normal">
+              Name of the bank / Type of bank account
+            </p>
+            <button class="button credit-card"></button>
+            <p class="additional-text">
+              Legal information and lorem ipsum dolor sit amet, consectetur
+              adipiscing elit. Maecenas a ipsum at libero sagittis dignissim sed
+              ac diam. Praesent ultrices maximus tortor et vulputate. Interdum
+              et malesuada fames ac ante ipsum primis in faucibus.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
     <footer class="footer" id="footer">
       <div class="wrapper">
         <div class="contact-block">

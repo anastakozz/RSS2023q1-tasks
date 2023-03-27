@@ -1,0 +1,149 @@
+.h1-title {
+  margin: 0;
+  margin-top: 163px;
+  color: #FFFFFF;
+  font-size: 44px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 400;
+  line-height: 57px; }
+
+.subtitle-normal {
+  margin: 0;
+  font-size: 16px;
+  font-font-family: Arial, Helvetica, sans-serif;
+  font-font-weight: 400;
+  line-height: 24px;
+  color: #4C4C4C; }
+
+.subtitle-light {
+  color: #CDCDCD; }
+
+.h2-title {
+  margin: 0;
+  color: #545454;
+  font-size: 35px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 400;
+  line-height: 46px;
+  letter-spacing: 2px; }
+
+html {
+  scroll-behavior: smooth; }
+
+body {
+  margin: 0; }
+
+main {
+  margin: auto;
+  display: flex;
+  flex-direction: column; }
+
+section {
+  padding: 80px 40px 100px 40px; }
+
+.wrapper {
+  width: 100%;
+  margin: auto;
+  max-width: 1280px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between; }
+
+header {
+  padding: 30px 40px 0 40px; }
+  header .wrapper-nav {
+    align-items: center; }
+  header .subtitle-normal {
+    margin-top: 42px;
+    max-width: 460px; }
+
+.main-header, .footer {
+  background: url(/shelter/assets/noise_transparent@2x.png), radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%), #211f20; }
+
+.pet-header {
+  background-color: #FFFFFF; }
+
+.start {
+  background: url(/shelter/assets/noise_transparent@2x.png), radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%), #211f20;
+  padding: 90px 0 0; }
+
+.about {
+  background-color: #FFFFFF; }
+  .about .wrapper {
+    padding: 0 175px; }
+  .about .h2-title {
+    padding-top: 14px; }
+  .about .subtitle-normal {
+    padding-top: 24px;
+    max-width: 430px;
+    letter-spacing: 1px; }
+
+.help {
+  background-color: #FFFFFF; }
+
+.our-friends, .donation {
+  background-color: #F6F6F6; }
+
+.logo-title {
+  margin: 0;
+  color: #F1CDB3;
+  font-size: 2em;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 400;
+  line-height: 35px;
+  letter-spacing: 2px; }
+
+.logo-pets-title {
+  color: #545454; }
+
+.logo-subtitle {
+  padding-top: 10px;
+  color: #FFFFFF;
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400px;
+  line-height: 15px;
+  letter-spacing: 1.3px; }
+
+.logo-pets-subtitle {
+  color: #292929; }
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+a {
+  margin: 0;
+  outline: none;
+  text-decoration: none;
+  cursor: pointer; }
+
+.link-light {
+  color: #CDCDCD; }
+  .link-light:visited {
+    color: #CDCDCD; }
+  .link-light:hover {
+    color: #FDDCC4;
+    border-bottom: 3px solid #F1CDB3; }
+  .link-light:active {
+    color: #FDDCC4; }
+
+.link-dark {
+  color: #545454; }
+  .link-dark:visited {
+    color: #545454; }
+  .link-dark:hover {
+    color: #292929;
+    border-bottom: 3px solid #F1CDB3; }
+  .link-dark:active {
+    color: #545454; }
+
+.nav-link {
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400px;
+  line-height: 24px;
+  margin-left: 35px; }
+
+/*# sourceMappingURL=style.css.map */
