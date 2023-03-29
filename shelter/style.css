@@ -259,12 +259,15 @@ header {
     display: flex;
     align-items: center; }
   .footer .contact-block a {
+    transition: all 0.03s ease-in-out;
     font-family: Georgia, "Times New Roman", Times, serif;
     font-size: 20px;
     font-weight: 400;
     letter-spacing: 1.2px;
     color: #F1CDB3;
     padding-left: 20px; }
+    .footer .contact-block a:hover {
+      color: #F6F6F6; }
 .footer .mail-logo {
   display: block;
   background-image: url(./assets/SVG/icon-email.svg);
@@ -318,29 +321,38 @@ a {
   cursor: pointer; }
 
 .link-light {
+  padding: 15px 0 5px 0;
   color: #CDCDCD; }
   .link-light:hover {
-    color: #FDDCC4;
-    border-bottom: 3px solid #F1CDB3;
+    color: #FAFAFA;
     transition: all 0.3s ease-in-out; }
   .link-light:active {
-    color: #FDDCC4;
+    color: #FAFAFA;
+    border-bottom: 3px solid #F1CDB3;
     transition: all 0.3s ease-in-out; }
 
 .link-light-inactive {
-  color: #FDDCC4;
+  padding: 15px 0 5px 0;
+  color: #FAFAFA;
   border-bottom: 3px solid #F1CDB3;
   cursor: not-allowed; }
 
 .link-dark {
+  padding: 15px 0 5px 0;
   color: #545454; }
   .link-dark:hover {
     color: #292929;
-    border-bottom: 3px solid #F1CDB3;
     transition: all 0.3s ease-in-out; }
   .link-dark:active {
     color: #545454;
-    transition: all 0.3s ease-in-out; }
+    transition: all 0.3s ease-in-out;
+    border-bottom: 3px solid #F1CDB3; }
+
+.link-dark-inactive {
+  padding: 15px 0 5px 0;
+  color: #545454;
+  border-bottom: 3px solid #F1CDB3;
+  cursor: not-allowed; }
 
 .nav-link {
   font-size: 15px;

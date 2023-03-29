@@ -386,12 +386,13 @@ header {
             display: flex;
             align-items: center;
         }
-        .adress {
+        .adress { 
             padding-top: 31px;
             display: flex;
             align-items: center;
         }
         a {
+            transition: all 0.03s ease-in-out;
             font: {
                 family: $Georgia;
                 size: 20px;
@@ -400,6 +401,9 @@ header {
             letter-spacing: 1.2px;
             color: $color-primary;
             padding-left: 20px;
+            &:hover {
+                color: $color-light-l;
+            }
         }
     }
 
@@ -482,35 +486,45 @@ a {
 }
 
 .link-light {
+    padding: 15px 0 5px 0;
     color: $color-dark-s;
     &:hover {
-        color: $color-primary-light;
-        border-bottom: 3px solid $color-primary;
+        color: $color-light-s;
         transition: all 0.3s ease-in-out;
     }
     &:active {
-        color: $color-primary-light;
+        color: $color-light-s;
+        border-bottom: 3px solid $color-primary;
         transition: all 0.3s ease-in-out;
     } 
 }
 
 .link-light-inactive {
-    color: $color-primary-light;
+    padding: 15px 0 5px 0;
+    color: $color-light-s;
     border-bottom: 3px solid $color-primary;
     cursor: not-allowed;
 }
 
 .link-dark {
+    padding: 15px 0 5px 0;
     color: $color-dark-l;
     &:hover {
         color: $color-dark-3xl;
-        border-bottom: 3px solid $color-primary;
         transition: all 0.3s ease-in-out;
     }
     &:active {
         color: $color-dark-l;
         transition: all 0.3s ease-in-out;
+        border-bottom: 3px solid $color-primary;
     }
+}
+
+.link-dark-inactive {
+    padding: 15px 0 5px 0;
+    color: $color-dark-l;
+    border-bottom: 3px solid $color-primary;
+    cursor: not-allowed;
 }
 
 .nav-link {
@@ -522,6 +536,8 @@ a {
     line-height: 24px;
     margin-left: 35px;
 }
+
+
 
 //buttons
 
