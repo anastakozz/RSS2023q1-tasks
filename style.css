@@ -453,19 +453,22 @@ a {
     border-color: #CDCDCD; }
 
 .input-button {
+  padding-left: 12px;
   cursor: pointer;
   box-sizing: border-box;
   height: 43px;
   width: 349px;
   border-radius: 9px;
-  transition: all 0.3s ease-in-out; }
-  .input-button:hover {
-    border-color: #FDDCC4;
-    background-color: #FDDCC4;
-    transition: all 0.3s ease-in-out; }
-  .input-button:before {
-    display: block;
-    background-image: url(./assets/SVG/credit-card.svg);
+  transition: all 0.3s ease-in-out;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #545454;
+  letter-spacing: 1.2px;
+  line-height: 23px; }
+  .input-button::before {
+    content: url(./assets/SVG/credit-card.svg);
+    float: left;
     width: 30px;
     height: 23px; }
 
