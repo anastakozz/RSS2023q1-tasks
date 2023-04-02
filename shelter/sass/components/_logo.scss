@@ -1,0 +1,38 @@
+// logo
+.logo-title {
+    margin: 0;
+    color: $color-primary;
+    font: {
+        size: 2em;
+        family: $Georgia;
+        weight: 400;
+    }
+    line-height: 35px;
+    letter-spacing: 2px;
+}
+
+.logo-pets-title {
+    color: $color-dark-l;
+}
+
+.logo-subtitle {
+    padding-top: 10px;
+    color: $color-light-xl;
+    font: {
+        size: 13px;
+        family: $Arial;
+        weight: 400px;
+    }
+    line-height: 15px;
+    letter-spacing: 1.3px; 
+}
+
+.logo-pets-subtitle {
+    color: $color-dark-3xl
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
