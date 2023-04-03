@@ -293,9 +293,9 @@ main {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap; }
-  @media (max-width: 1000px) {
+  @media (max-width: 1150px) {
     .wrapper {
-      max-width: 1000px;
+      max-width: 1150px;
       padding: 80px 30px 100px 30px; } }
   @media (max-width: 767px) {
     .wrapper {
@@ -308,7 +308,7 @@ header {
     padding: 30px 40px 10px 40px;
     align-items: center;
     justify-content: space-between; }
-    @media (max-width: 1000px) {
+    @media (max-width: 1150px) {
       header .wrapper-nav {
         padding: 30px 30px 10px 30px; } }
     @media (max-width: 767px) {
@@ -360,7 +360,7 @@ header {
   .start .wrapper .start-image {
     vertical-align: bottom;
     max-width: 698px; }
-  @media (max-width: 1000px) {
+  @media (max-width: 1150px) {
     .start .wrapper {
       padding-top: 50px; }
       .start .wrapper .start-info {
@@ -403,7 +403,7 @@ header {
     max-height: 408px;
     margin: 0 60px;
     padding-bottom: 66px; }
-  @media (max-width: 1000px) {
+  @media (max-width: 1150px) {
     .about .h2-title {
       padding-top: 0; } }
   @media (max-width: 767px) {
@@ -491,7 +491,7 @@ header {
     height: 270px;
     border-top-right-radius: 9px;
     border-top-left-radius: 9px; }
-  @media (max-width: 1000px) {
+  @media (max-width: 1150px) {
     .our-friends .wrapper-our-pets {
       padding-bottom: 76px; }
     .our-friends .main-cards-container {
@@ -576,18 +576,19 @@ header {
     background-image: url(./assets/SVG/icon-collars-leashes.svg); }
   .help .sleeping {
     background-image: url(./assets/SVG/icon-sleeping-area.svg); }
-  @media (max-width: 1000px) {
+  @media (max-width: 1150px) {
     .help .wrapper {
       padding: 80px 39px 48px 39px; }
     .help .help-item {
       width: 170px;
       padding: 0 30px 34px 30px; } }
-@media (max-width: 1000px) and (max-width: 767px) {
+@media (max-width: 1150px) and (max-width: 767px) {
   .help .wrapper {
     padding: 40px 0 14px 0; }
   .help .h2-title {
     max-width: 220px; }
   .help .help-list {
+    max-width: 400px;
     padding-top: 42px;
     justify-content: space-between; }
   .help .help-item {
@@ -619,7 +620,7 @@ header {
     margin-bottom: 20px; }
   .donation .additional-text {
     padding-top: 5px; }
-  @media (max-width: 1000px) {
+  @media (max-width: 1150px) {
     .donation .additional-text {
       padding-bottom: 40px; } }
   @media (max-width: 767px) {
@@ -675,7 +676,7 @@ header {
   background-image: url(./assets/SVG/icon-marker.svg);
   width: 22px;
   height: 32px; }
-@media (max-width: 1000px) {
+@media (max-width: 1150px) {
   .footer .wrapper {
     padding: 14px 72px 0 64px; }
   .footer .footer-img {
