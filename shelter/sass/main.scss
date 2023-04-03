@@ -58,22 +58,58 @@ header {
     box-sizing: border-box;
     
     .wrapper-nav {
-        padding-top: 30px;
-        padding-bottom: 10px;
+        padding: 30px 40px 10px 40px;
         align-items: center;
-        justify-content: space-between
+        justify-content: space-between;
+        
+        @include media-tablet {
+            padding: 30px 30px 10px 30px;
+        }
+
+        @include media-mobile {
+            padding: 30px 20px 10px 20px;
+        }
     }
-    
+    .burger {
+        display: none;
+    } 
 
  }
 
 .main-header, .footer {
     @include background-start(); 
+
+    @include media-mobile {
+        .burger {
+            display: block;
+            background-image: url(./assets/SVG/Burger_light.svg);
+            width: 30px;
+            height: 22px;
+        }
+
+        .nav {
+            display: none;
+        }
+    }
+    
 }
 
 .pets-header {
     background-color: $color-light-xl;
     padding-bottom: 20px;
+
+    @include media-mobile {
+        .burger {
+            display: block;
+            background-image: url(./assets/SVG/Burger_dark.svg);
+            width: 30px;
+            height: 22px;
+        }
+
+        .nav {
+            display: none;
+        }
+    }
 }
 
 .start {
@@ -81,6 +117,7 @@ header {
       padding-bottom: 0; 
 
         .start-info {
+            max-width: 100%;
             margin-top: 20px;
             margin-bottom: 100px;
             display: flex;
@@ -89,7 +126,9 @@ header {
         }
 
         .subtitle-normal {
-            width: 460px;
+            width: 100%;
+            max-width: 460px;
+            
             margin-top: 42px;
             margin-bottom: 42px;
         }
@@ -109,28 +148,39 @@ header {
       @include media-tablet {
         padding-top: 50px;
        
-        .start-info {
-            margin:  0 auto  100px auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            .start-info {
+                margin:  0 auto  100px auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .subtitle-normal {
+                margin-bottom: 42px;
+                max-width: 460px;
+            }
+
+            .start-img-div {
+                width: 100%;
+            }
+
+            .start-image {
+                max-width: 569px; 
+            }
         }
 
-        .subtitle-normal {
-            margin-bottom: 42px;
-            max-width: 460px;
+        @include media-mobile {
+            .start-info {
+                margin-bottom:  105px;
+               
+            }
+            .start-image {
+                max-width: 260px; 
+            }
         }
 
-        .start-img-div {
-            width: 100%;
-        }
 
-        .start-image {
-            max-width: 569px; 
-        }
 
-        
-    }
     }
 
     
@@ -167,12 +217,32 @@ header {
     }
 
     @include media-tablet {
-        
-
         .h2-title {
             padding-top: 0;
+        }   
+    }
+
+    @include media-mobile {
+        .wrapper {
+            padding-bottom: 42.5px;
         }
-        
+        .about-info {
+            margin: 0 15px;
+        }
+
+        .subtitle-normal {
+            text-align: justify;
+        }
+
+        .p-second {
+            padding-top: 20px;
+            padding-bottom: 42px;
+        }
+
+        img {
+            max-width: 260px;
+            padding-bottom: 0;
+        }
     }
 }
 
@@ -299,6 +369,45 @@ header {
             margin-top: 25px;
         }
     }
+
+    @include media-mobile {
+        .wrapper-our-pets {
+            padding-bottom: 42px ;
+        }
+
+        .slider {
+            margin-top: 25px;
+            flex-wrap: wrap;
+            max-width: 270px;
+        }
+
+        .main-cards-container{
+            margin: 0;
+            max-width: 270px;
+            .card-2, .card-3 {
+                display: none;
+            }
+            order: -1;
+
+        }
+
+        .main-arrow {
+            margin: 5px 40px 0 40px;
+        }
+
+        .pets-cards-container {
+            justify-content: center;
+            margin-top: 25px;
+            max-width: 270px;
+            .card-4, .card-5, .card-6 {
+                display: none;
+            }
+        }
+
+        .pets-navigation {
+            margin-top: 27px;
+        }
+    }
 }
 
 
@@ -329,52 +438,50 @@ header {
         align-items: center;
         padding: 0 60px 34px 60px;
         list-style-type: none;
-        
-        span {
-            padding-bottom: 10px;
-            margin: auto;
-            display: block;
-            background-repeat: no-repeat;
-            width: 60px;
-            height: 60px;
-        }
-        .pet-food {
-            background-image: url(./assets/SVG/icon-pet-food.svg);
-        }
+    }
 
-        .transportation {
-            background-image: url(./assets/SVG/icon-transportation.svg);
-        }
+    .help-list-logo {
+        padding-bottom: 10px;
+        margin: auto;
+        display: block;
+        background-repeat: no-repeat;
+        width: 60px;
+        height: 60px;
+    }
+    .pet-food {
+        background-image: url(./assets/SVG/icon-pet-food.svg);
+    }
 
-        .toys {
-            background-image: url(./assets/SVG/icon-toys.svg);
-        }
+    .transportation {
+        background-image: url(./assets/SVG/icon-transportation.svg);
+    }
 
-        .bowls {
-            background-image: url(./assets/SVG/icon-bowls-and-cups.svg);
-        }
+    .toys {
+        background-image: url(./assets/SVG/icon-toys.svg);
+    }
 
-        .shampoos {
-            background-image: url(./assets/SVG/icon-shampoos.svg);
-        }
+    .bowls {
+        background-image: url(./assets/SVG/icon-bowls-and-cups.svg);
+    }
 
-        .vitamins {
-            background-image: url(./assets/SVG/icon-vitamins.svg);
-        }
+    .shampoos {
+        background-image: url(./assets/SVG/icon-shampoos.svg);
+    }
 
-        .medicines {
-            background-image: url(./assets/SVG/icon-medicines.svg);
-        }
+    .vitamins {
+        background-image: url(./assets/SVG/icon-vitamins.svg);
+    }
 
-        .collars {
-            background-image: url(./assets/SVG/icon-collars-leashes.svg);
-        }
+    .medicines {
+        background-image: url(./assets/SVG/icon-medicines.svg);
+    }
 
-        .sleeping {
-            background-image: url(./assets/SVG/icon-sleeping-area.svg);
-        }
+    .collars {
+        background-image: url(./assets/SVG/icon-collars-leashes.svg);
+    }
 
-       
+    .sleeping {
+        background-image: url(./assets/SVG/icon-sleeping-area.svg);
     }
 
     @include media-tablet {
@@ -384,6 +491,35 @@ header {
         .help-item {
             width: 170px;
             padding: 0 30px 34px 30px;
+    }
+
+    @include media-mobile {
+        .wrapper {
+            padding: 40px 0 14px 0;
+        }
+
+        .h2-title {
+            max-width: 220px;
+        }
+
+        .help-list {
+            padding-top: 42px;
+            justify-content: space-between;
+        }
+
+        .help-item {
+            width: 130px;
+            padding: 0 15px 15px 15px;
+        }
+
+        .help-list-logo {
+            background-size: contain;
+            width: 50px;
+            height: 50px;
+            padding-bottom: 5px;
+        }
+        
+        
     }
 }
 
@@ -420,6 +556,27 @@ header {
     @include media-tablet {
         .additional-text {
             padding-bottom: 40px;
+        }
+    }
+
+    @include media-mobile {
+        .wrapper {
+            padding-bottom: 32px;
+        }
+
+        .subtitle-additional {
+            margin-top: 20px;
+            margin-bottom: 25px;
+        }
+
+        .additional-text {
+            padding-top: 8px;
+            padding-bottom: 20px;
+        }
+
+        .donation-image {
+            padding: 11px 16px 10px 16px;
+            max-width: 260px;
         }
     }
 
@@ -461,6 +618,10 @@ header {
         }
     }
 
+    .h2-title {
+        max-width: 278px;
+    }
+
     .mail-logo {
         display: block;
         background-image: url(./assets/SVG/icon-email.svg);
@@ -490,6 +651,41 @@ header {
         margin: auto;
         margin-top: 65px;
     }
+    
+ }
+
+ @include media-mobile {
+    .wrapper {
+        padding: 30px 10px 0 10px;
+        justify-content: center;
+    }
+    .footer-img {
+        max-width: 260px;
+    }
+
+    .h2-title {
+        max-width: 270px;
+        
+    }
+
+    .contact-block {
+        margin-top: 0;
+        margin-bottom: 40px;
+        .mail, .phone {
+            margin: auto;
+            justify-content: center;
+        }
+        .adress {
+            padding-top: 40px;
+        }
+
+    }
+    .footer-img {
+        margin: auto;
+        margin-top: 0;
+    }
+
+    
  }
 
 }

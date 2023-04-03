@@ -12,6 +12,13 @@ $Georgia: Georgia, 'Times New Roman', Times, serif;
         weight: 400;
     }
     line-height: 57px;
+
+    @include media-mobile {
+        font-size: 25px;
+        line-height: 32.5px;
+        letter-spacing: 1.2px;
+        text-align: center;
+    }
 }
 
 .subtitle-normal {
@@ -23,6 +30,10 @@ $Georgia: Georgia, 'Times New Roman', Times, serif;
     }
     line-height: 24px;
     color: $color-dark-xl;
+
+    @include media-mobile {
+        text-align: center;
+    }
 }
 
 .subtitle-light {
@@ -39,6 +50,14 @@ $Georgia: Georgia, 'Times New Roman', Times, serif;
     }
     line-height: 46px;
     letter-spacing: 2px;
+
+    @include media-mobile {
+        font-size: 25px;
+        line-height: 32.5px;
+        letter-spacing: 1.2px; 
+        text-align: center;
+        margin: auto;
+    }
 }
 
 .title-light {
@@ -54,6 +73,12 @@ $Georgia: Georgia, 'Times New Roman', Times, serif;
     }
     text-align: center;
     letter-spacing: 1.2px;
+
+    @include media-mobile {
+        font-size: 15px;
+        line-height: 16.5px;
+        
+    }
 }
 
 .subtitle-additional {
@@ -64,6 +89,11 @@ $Georgia: Georgia, 'Times New Roman', Times, serif;
         weight: 400;
     }
     letter-spacing: 0.9px;
+
+    @include media-mobile {
+        letter-spacing: 0;
+        text-align: center;
+    }
 }
 
 .additional-text {
@@ -74,4 +104,8 @@ $Georgia: Georgia, 'Times New Roman', Times, serif;
         style: italic;
     }
     line-height: 18px;
+
+    @include media-mobile {
+     text-align: justify;
+    }
 }

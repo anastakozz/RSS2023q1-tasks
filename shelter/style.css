@@ -5,6 +5,12 @@
   font-family: Georgia, "Times New Roman", Times, serif;
   font-weight: 400;
   line-height: 57px; }
+  @media (max-width: 767px) {
+    .h1-title {
+      font-size: 25px;
+      line-height: 32.5px;
+      letter-spacing: 1.2px;
+      text-align: center; } }
 
 .subtitle-normal {
   margin: 0;
@@ -13,6 +19,9 @@
   font-weight: 400;
   line-height: 24px;
   color: #4C4C4C; }
+  @media (max-width: 767px) {
+    .subtitle-normal {
+      text-align: center; } }
 
 .subtitle-light {
   color: #CDCDCD; }
@@ -25,6 +34,13 @@
   font-weight: 400;
   line-height: 46px;
   letter-spacing: 2px; }
+  @media (max-width: 767px) {
+    .h2-title {
+      font-size: 25px;
+      line-height: 32.5px;
+      letter-spacing: 1.2px;
+      text-align: center;
+      margin: auto; } }
 
 .title-light {
   color: #FFFFFF; }
@@ -36,6 +52,10 @@
   font-weight: 400;
   text-align: center;
   letter-spacing: 1.2px; }
+  @media (max-width: 767px) {
+    .help-list-text {
+      font-size: 15px;
+      line-height: 16.5px; } }
 
 .subtitle-additional {
   color: #545454;
@@ -43,6 +63,10 @@
   font-size: 15px;
   font-weight: 400;
   letter-spacing: 0.9px; }
+  @media (max-width: 767px) {
+    .subtitle-additional {
+      letter-spacing: 0;
+      text-align: center; } }
 
 .additional-text {
   color: #B2B2B2;
@@ -50,6 +74,9 @@
   font-size: 12px;
   font-style: italic;
   line-height: 18px; }
+  @media (max-width: 767px) {
+    .additional-text {
+      text-align: justify; } }
 
 a {
   padding: 0;
@@ -193,6 +220,7 @@ a {
     border-color: #CDCDCD; }
 
 .input-button {
+  display: block;
   padding-left: 12px;
   cursor: pointer;
   box-sizing: border-box;
@@ -211,6 +239,12 @@ a {
     float: left;
     width: 30px;
     height: 23px; }
+  @media (max-width: 767px) {
+    .input-button {
+      margin: auto;
+      width: 281px;
+      font-size: 15px;
+      line-height: 16.5px; } }
 
 .logo-title {
   margin: 0;
@@ -263,36 +297,61 @@ main {
     .wrapper {
       max-width: 1000px;
       padding: 80px 30px 100px 30px; } }
-  @media (max-width: 320px) {
+  @media (max-width: 767px) {
     .wrapper {
-      max-width: 320px;
+      max-width: 767px;
       padding: 42px 10px; } }
 
 header {
   box-sizing: border-box; }
   header .wrapper-nav {
-    padding-top: 30px;
-    padding-bottom: 10px;
+    padding: 30px 40px 10px 40px;
     align-items: center;
     justify-content: space-between; }
+    @media (max-width: 1000px) {
+      header .wrapper-nav {
+        padding: 30px 30px 10px 30px; } }
+    @media (max-width: 767px) {
+      header .wrapper-nav {
+        padding: 30px 20px 10px 20px; } }
+  header .burger {
+    display: none; }
 
 .main-header, .footer {
   background: url(./assets/noise_transparent@2x.png), radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%), #211f20; }
+  @media (max-width: 767px) {
+    .main-header .burger, .footer .burger {
+      display: block;
+      background-image: url(./assets/SVG/Burger_light.svg);
+      width: 30px;
+      height: 22px; }
+    .main-header .nav, .footer .nav {
+      display: none; } }
 
 .pets-header {
   background-color: #FFFFFF;
   padding-bottom: 20px; }
+  @media (max-width: 767px) {
+    .pets-header .burger {
+      display: block;
+      background-image: url(./assets/SVG/Burger_dark.svg);
+      width: 30px;
+      height: 22px; }
+    .pets-header .nav {
+      display: none; } }
 
 .start .wrapper {
   padding-bottom: 0; }
   .start .wrapper .start-info {
+    max-width: 100%;
     margin-top: 20px;
     margin-bottom: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center; }
   .start .wrapper .subtitle-normal {
-    width: 460px;
+    width: 100%;
+    max-width: 460px;
     margin-top: 42px;
     margin-bottom: 42px; }
   .start .wrapper .start-img-div {
@@ -316,6 +375,11 @@ header {
         width: 100%; }
       .start .wrapper .start-image {
         max-width: 569px; } }
+  @media (max-width: 767px) {
+    .start .wrapper .start-info {
+      margin-bottom: 105px; }
+    .start .wrapper .start-image {
+      max-width: 260px; } }
 
 .about {
   background-color: #FFFFFF; }
@@ -342,6 +406,19 @@ header {
   @media (max-width: 1000px) {
     .about .h2-title {
       padding-top: 0; } }
+  @media (max-width: 767px) {
+    .about .wrapper {
+      padding-bottom: 42.5px; }
+    .about .about-info {
+      margin: 0 15px; }
+    .about .subtitle-normal {
+      text-align: justify; }
+    .about .p-second {
+      padding-top: 20px;
+      padding-bottom: 42px; }
+    .about img {
+      max-width: 260px;
+      padding-bottom: 0; } }
 
 .our-friends {
   background-color: #F6F6F6; }
@@ -428,6 +505,29 @@ header {
         display: none; }
     .our-friends .pets-navigation {
       margin-top: 25px; } }
+  @media (max-width: 767px) {
+    .our-friends .wrapper-our-pets {
+      padding-bottom: 42px; }
+    .our-friends .slider {
+      margin-top: 25px;
+      flex-wrap: wrap;
+      max-width: 270px; }
+    .our-friends .main-cards-container {
+      margin: 0;
+      max-width: 270px;
+      order: -1; }
+      .our-friends .main-cards-container .card-2, .our-friends .main-cards-container .card-3 {
+        display: none; }
+    .our-friends .main-arrow {
+      margin: 5px 40px 0 40px; }
+    .our-friends .pets-cards-container {
+      justify-content: center;
+      margin-top: 25px;
+      max-width: 270px; }
+      .our-friends .pets-cards-container .card-4, .our-friends .pets-cards-container .card-5, .our-friends .pets-cards-container .card-6 {
+        display: none; }
+    .our-friends .pets-navigation {
+      margin-top: 27px; } }
 
 .help {
   background-color: #FFFFFF; }
@@ -451,37 +551,53 @@ header {
     align-items: center;
     padding: 0 60px 34px 60px;
     list-style-type: none; }
-    .help .help-item span {
-      padding-bottom: 10px;
-      margin: auto;
-      display: block;
-      background-repeat: no-repeat;
-      width: 60px;
-      height: 60px; }
-    .help .help-item .pet-food {
-      background-image: url(./assets/SVG/icon-pet-food.svg); }
-    .help .help-item .transportation {
-      background-image: url(./assets/SVG/icon-transportation.svg); }
-    .help .help-item .toys {
-      background-image: url(./assets/SVG/icon-toys.svg); }
-    .help .help-item .bowls {
-      background-image: url(./assets/SVG/icon-bowls-and-cups.svg); }
-    .help .help-item .shampoos {
-      background-image: url(./assets/SVG/icon-shampoos.svg); }
-    .help .help-item .vitamins {
-      background-image: url(./assets/SVG/icon-vitamins.svg); }
-    .help .help-item .medicines {
-      background-image: url(./assets/SVG/icon-medicines.svg); }
-    .help .help-item .collars {
-      background-image: url(./assets/SVG/icon-collars-leashes.svg); }
-    .help .help-item .sleeping {
-      background-image: url(./assets/SVG/icon-sleeping-area.svg); }
+  .help .help-list-logo {
+    padding-bottom: 10px;
+    margin: auto;
+    display: block;
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 60px; }
+  .help .pet-food {
+    background-image: url(./assets/SVG/icon-pet-food.svg); }
+  .help .transportation {
+    background-image: url(./assets/SVG/icon-transportation.svg); }
+  .help .toys {
+    background-image: url(./assets/SVG/icon-toys.svg); }
+  .help .bowls {
+    background-image: url(./assets/SVG/icon-bowls-and-cups.svg); }
+  .help .shampoos {
+    background-image: url(./assets/SVG/icon-shampoos.svg); }
+  .help .vitamins {
+    background-image: url(./assets/SVG/icon-vitamins.svg); }
+  .help .medicines {
+    background-image: url(./assets/SVG/icon-medicines.svg); }
+  .help .collars {
+    background-image: url(./assets/SVG/icon-collars-leashes.svg); }
+  .help .sleeping {
+    background-image: url(./assets/SVG/icon-sleeping-area.svg); }
   @media (max-width: 1000px) {
     .help .wrapper {
       padding: 80px 39px 48px 39px; }
     .help .help-item {
       width: 170px;
       padding: 0 30px 34px 30px; } }
+@media (max-width: 1000px) and (max-width: 767px) {
+  .help .wrapper {
+    padding: 40px 0 14px 0; }
+  .help .h2-title {
+    max-width: 220px; }
+  .help .help-list {
+    padding-top: 42px;
+    justify-content: space-between; }
+  .help .help-item {
+    width: 130px;
+    padding: 0 15px 15px 15px; }
+  .help .help-list-logo {
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+    padding-bottom: 5px; } }
 
 .donation {
   background-color: #F6F6F6; }
@@ -506,6 +622,18 @@ header {
   @media (max-width: 1000px) {
     .donation .additional-text {
       padding-bottom: 40px; } }
+  @media (max-width: 767px) {
+    .donation .wrapper {
+      padding-bottom: 32px; }
+    .donation .subtitle-additional {
+      margin-top: 20px;
+      margin-bottom: 25px; }
+    .donation .additional-text {
+      padding-top: 8px;
+      padding-bottom: 20px; }
+    .donation .donation-image {
+      padding: 11px 16px 10px 16px;
+      max-width: 260px; } }
 
 .footer .wrapper {
   padding-top: 40px;
@@ -530,6 +658,8 @@ header {
     padding-left: 20px; }
     .footer .contact-block a:hover {
       color: #F6F6F6; }
+.footer .h2-title {
+  max-width: 278px; }
 .footer .mail-logo {
   display: block;
   background-image: url(./assets/SVG/icon-email.svg);
@@ -551,5 +681,24 @@ header {
   .footer .footer-img {
     margin: auto;
     margin-top: 65px; } }
+@media (max-width: 767px) {
+  .footer .wrapper {
+    padding: 30px 10px 0 10px;
+    justify-content: center; }
+  .footer .footer-img {
+    max-width: 260px; }
+  .footer .h2-title {
+    max-width: 270px; }
+  .footer .contact-block {
+    margin-top: 0;
+    margin-bottom: 40px; }
+    .footer .contact-block .mail, .footer .contact-block .phone {
+      margin: auto;
+      justify-content: center; }
+    .footer .contact-block .adress {
+      padding-top: 40px; }
+  .footer .footer-img {
+    margin: auto;
+    margin-top: 0; } }
 
 /*# sourceMappingURL=style.css.map */

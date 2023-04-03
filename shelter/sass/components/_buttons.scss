@@ -115,6 +115,7 @@
 }
 
 .input-button {
+    display: block;
     padding-left: 12px;
     cursor: pointer;
     box-sizing: border-box;
@@ -135,6 +136,13 @@
         float: left;
         width: 30px;
         height: 23px;
+    }
+
+    @include media-mobile {
+        margin: auto;
+        width: 281px;
+        font-size: 15px;
+        line-height: 16.5px;
     }
 }
 
