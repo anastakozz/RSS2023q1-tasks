@@ -5,6 +5,9 @@
 @import "components/links";
 @import "components/buttons";
 @import "components/logo";
+@import "components/burger-icon";
+@import "components/burger-menu";
+
 
 
 //fonts
@@ -29,8 +32,6 @@ main {
     flex-direction: column;
 
 }
-
-
 
 .wrapper {
     margin: auto;
@@ -82,9 +83,6 @@ header {
     @include media-mobile {
         .burger {
             display: block;
-            background-image: url(./assets/SVG/Burger_light.svg);
-            width: 30px;
-            height: 22px;
         }
 
         .nav {
@@ -245,8 +243,6 @@ header {
         }
     }
 }
-
-
 
 .our-friends{
     background-color: $color-light-l;
@@ -409,8 +405,6 @@ header {
         }
     }
 }
-
-
 
 .help {
     background-color: $color-light-xl;

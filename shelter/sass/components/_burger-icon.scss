@@ -1,0 +1,72 @@
+%burger-line {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    height: 2px;
+    // background-color: $color-primary;
+}
+
+
+%burger {
+    position: absolute;
+    right: 20px;
+    top: 50px;
+    display: inline-block;
+    width: 30px;
+    height: 22px;
+     &::before {
+        @extend %burger-line;
+        top: 0;
+        left: 0;
+     }
+     &::after {
+        @extend %burger-line;
+        bottom: 0;
+        left: 0;
+     }
+     transition: all 0.3s ease-in-out;
+}
+
+.burger-line-light {
+    @extend %burger-line;
+    top: calc(50% - 1px);
+    background-color: $color-primary;
+}
+
+.burger-light {
+    z-index: 4;
+    @extend %burger;
+    &::before {
+    background-color: $color-primary;
+    }
+    &::after {
+        background-color: $color-primary;
+    }
+}
+
+.burger-line-dark {
+    @extend %burger-line;
+    top: calc(50% - 1px);
+    background-color: $color-dark-3xl;
+}
+
+.burger-dark {
+    z-index: 2;
+    @extend %burger;
+    &::before {
+    background-color: $color-dark-3xl;
+    }
+    &::after {
+        background-color: $color-dark-3xl;
+    }
+}
+
+.icon-open {
+    transform: rotate(90deg);
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+
