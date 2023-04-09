@@ -95,6 +95,13 @@
     transform: rotate(180deg); 
 }
 
+.cross {
+    width: 25px;
+    height: 11px;
+    background: url(./assets/SVG/cross.svg) center;
+    
+}
+
 .page-number {
     font-family: $Georgia;
     font-size: 20px;

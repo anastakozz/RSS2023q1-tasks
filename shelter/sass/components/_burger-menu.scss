@@ -5,8 +5,14 @@
     z-index: 1;
     width: 100%;
     height: 100vh;
-       
+    overflow: hidden;
+    visibility: hidden;
+
+    @media (min-width: 768px) {
+        display: none;
+    }
 }
+
 
 
 
@@ -33,6 +39,7 @@
 .open {
     transition: all 0.5s ease-in-out;
     right: 0;
+    visibility: visible;
 }
 
 .blackout {
