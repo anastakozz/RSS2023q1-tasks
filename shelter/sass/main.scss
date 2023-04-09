@@ -267,11 +267,17 @@ header {
     .main-cards-container{
         margin-top: 43px;
         display: flex;
+        width: 100%;
+        max-width: 995px;
+        margin: 0 10px;
+    }
+
+    .center-container { 
+        display: flex;
         justify-content: space-between;
         align-items: center;
         width: 100%;
         max-width: 995px;
-        margin: 0 10px;
     }
 
     .pets-cards-container {

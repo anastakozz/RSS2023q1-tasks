@@ -47,6 +47,7 @@ burger_link.addEventListener("click", burgerToggleFunc);
 
 
 
+//modal windows
 
 const modalOpen = (event) => {
     let i = event.currentTarget.id;
@@ -67,8 +68,6 @@ const modalOpen = (event) => {
                 popup_diseases.textContent = data[i].diseases;
                 popup_parasites.textContent = data[i].parasites;
                 popup_img.src = data[i].modal;
-
-
             });
         
     }
@@ -78,13 +77,13 @@ const modalOpen = (event) => {
 }
 
 
-
-
 cards.forEach(card => {
     card.addEventListener("click", modalOpen);
 })
 popup.addEventListener("click", modalOpen)
 
 
+//pagination
 
+let
 
