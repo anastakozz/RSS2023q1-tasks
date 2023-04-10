@@ -1,0 +1,45 @@
+@keyframes move-left {
+    from {left: -1145px;}
+    to {left: -50px;}
+}
+
+@keyframes move-right {
+    from {left: -1145px;}
+    to {left: -2240px;}
+}
+
+@include media-tablet {
+
+    @keyframes move-left {    
+    from {left: -640px;}
+    to {left: -20px;}
+    }
+
+    @keyframes move-right {    
+        from {left: -640px;}
+        to {left: -1260px;}
+        }
+}
+
+@include media-mobile {
+
+    @keyframes move-left {    
+    from {left: -300px;}
+    to {left: -10px;}
+    }
+
+    @keyframes move-right {    
+        from {left: -300px;}
+        to {left: -590px;}
+        }
+}
+
+.transition-left {
+    animation-name: move-left;
+    animation-duration: 1s;
+}
+
+.transition-right {
+    animation-name: move-right;
+    animation-duration: 1s;
+}

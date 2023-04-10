@@ -26,6 +26,15 @@ const popup_diseases = document.querySelector(".diseases");
 const popup_parasites = document.querySelector(".parasites");
 const popup_img = document.querySelector(".popup-img");
 
+//slider constants
+
+const arrow_left = document.querySelector(".main-arrow-left");
+const arrow_right = document.querySelector(".main-arrow-right");
+const cards_wrapper = document.querySelector(".cards-wrapper");
+const left_container = document.querySelector(".left-container");
+const center_container = document.querySelector(".center-container");
+const right_container = document.querySelector(".right-container");
+
 
 
 
@@ -51,9 +60,6 @@ burger_link.addEventListener("click", burgerToggleFunc);
 
 const modalOpen = (event) => {
     let i = event.currentTarget.id;
-    console.log(i);
-
-
 
     if (popup.classList.contains("hidden")) {
         const pets = 'pets.json';
@@ -83,7 +89,44 @@ cards.forEach(card => {
 popup.addEventListener("click", modalOpen)
 
 
-//pagination
+//slider
+const pastArr = [0,1,2];
+const currArr = [3,4,5];
+const nextArr = [6,7,0];
 
-let
+const generateCards = (container, arr) => {
+    
+    for (let i=0; i<container.children.length; i++) {
+        console.log(container.children[i]);
+        const pets = 'pets.json';
+        fetch(pets)
+            .then(res => res.json())
+            .then(data => { 
+                container.children[i].id = arr[i];
+                container.children[i].children[0].src = data[arr[i]].img;
+                container.children[i].children[0].alt = data[arr[i]].name;
+                container.children[i].children[1].children[0].textContent = data[arr[i]].name;
+            });
+    }  
+}
+
+generateCards(left_container, nextArr);
+generateCards(center_container, nextArr);
+generateCards(right_container, nextArr);
+
+const moveLeft = () => {
+    cards_wrapper.classList.add("transition-left");
+}
+
+const moveRight = () => {
+    cards_wrapper.classList.add("transition-right");
+}
+
+arrow_left.addEventListener("click", moveLeft);
+arrow_right.addEventListener("click", moveRight);
+
+cards_wrapper.addEventListener("animationend", () => {
+    cards_wrapper.classList.remove("transition-left");
+    cards_wrapper.classList.remove("transition-right");
+})
 

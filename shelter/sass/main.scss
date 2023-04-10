@@ -8,6 +8,7 @@
 @import "components/burger-icon";
 @import "components/burger-menu";
 @import "components/popup";
+@import "components/animations";
 
 
 
@@ -265,19 +266,29 @@ header {
         padding-bottom: 45px;
     }
     .main-cards-container{
+        overflow: hidden;
         margin-top: 43px;
-        display: flex;
-        width: 100%;
-        max-width: 995px;
         margin: 0 10px;
+        display: flex;
+        align-items: center;
     }
 
-    .center-container { 
+    .cards-wrapper {
+        position: relative;
+        left: -1145px;
         display: flex;
-        justify-content: space-between;
         align-items: center;
         width: 100%;
         max-width: 995px;
+    }
+
+    .center-container, .left-container, .right-container { 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-width: 100%;
+        max-width: 995px;
+        margin: 0 50px;
     }
 
     .pets-cards-container {
@@ -360,6 +371,16 @@ header {
             }
         }
 
+        .cards-wrapper {
+            left: -640px;
+            max-width: 580px;
+        }
+
+        .center-container, .left-container, .right-container { 
+            max-width: 580px;
+            margin: 0 20px;
+        }
+
         .pets-cards-container {
             margin-top: 13px;
             max-width: 580px;
@@ -391,7 +412,15 @@ header {
                 display: none;
             }
             order: -1;
+        }
+        .cards-wrapper {
+            left: -300px;
+            max-width: 270px;
+        }
 
+        .center-container, .left-container, .right-container { 
+            max-width: 270px;
+            margin: 0 10px;
         }
 
         .main-arrow {

@@ -412,7 +412,7 @@ a {
     max-height: 500px;
     border-bottom-left-radius: 9px;
     border-top-left-radius: 9px; }
-  @media (max-width: 1150px) {
+  @media (max-width: 1200px) {
     .popup-content {
       max-width: 630px; }
       .popup-content .popup-img {
@@ -432,7 +432,7 @@ a {
 .popup-block {
   max-width: 351px;
   margin: 50px 20px 0 29px; }
-  @media (max-width: 1150px) {
+  @media (max-width: 1200px) {
     .popup-block {
       max-width: 260px;
       margin: 10px 9px 0 11px; } }
@@ -467,7 +467,7 @@ a {
     color: #000000;
     line-height: 17px;
     letter-spacing: 1.2px; }
-    @media (max-width: 1150px) {
+    @media (max-width: 1200px) {
       .popup-block .description {
         font-size: 13px;
         line-height: 14.3px;
@@ -486,7 +486,7 @@ a {
     padding-left: 15px;
     background: url(../../assets/dot.png) no-repeat left center;
     margin: 0 0 11px 0; }
-    @media (max-width: 1150px) {
+    @media (max-width: 1200px) {
       .popup-block .popup-list-item {
         margin-bottom: 5px; } }
   .popup-block .li-title {
@@ -502,6 +502,46 @@ a {
   position: absolute;
   right: -42px;
   top: -52px; }
+
+@keyframes move-left {
+  from {
+    left: -1145px; }
+  to {
+    left: -50px; } }
+@keyframes move-right {
+  from {
+    left: -1145px; }
+  to {
+    left: -2240px; } }
+@media (max-width: 1200px) {
+  @keyframes move-left {
+    from {
+      left: -640px; }
+    to {
+      left: -20px; } }
+  @keyframes move-right {
+    from {
+      left: -640px; }
+    to {
+      left: -1260px; } } }
+@media (max-width: 767px) {
+  @keyframes move-left {
+    from {
+      left: -300px; }
+    to {
+      left: -10px; } }
+  @keyframes move-right {
+    from {
+      left: -300px; }
+    to {
+      left: -590px; } } }
+.transition-left {
+  animation-name: move-left;
+  animation-duration: 1s; }
+
+.transition-right {
+  animation-name: move-right;
+  animation-duration: 1s; }
 
 html {
   scroll-behavior: smooth; }
@@ -521,9 +561,9 @@ main {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap; }
-  @media (max-width: 1150px) {
+  @media (max-width: 1200px) {
     .wrapper {
-      max-width: 1150px;
+      max-width: 1200px;
       padding: 80px 30px 100px 30px; } }
   @media (max-width: 767px) {
     .wrapper {
@@ -536,7 +576,7 @@ header {
     padding: 30px 40px 10px 40px;
     align-items: center;
     justify-content: space-between; }
-    @media (max-width: 1150px) {
+    @media (max-width: 1200px) {
       header .wrapper-nav {
         padding: 30px 30px 10px 30px; } }
     @media (max-width: 767px) {
@@ -585,7 +625,7 @@ header {
   .start .wrapper .start-image {
     vertical-align: bottom;
     max-width: 698px; }
-  @media (max-width: 1150px) {
+  @media (max-width: 1200px) {
     .start .wrapper {
       padding-top: 50px; }
       .start .wrapper .start-info {
@@ -628,7 +668,7 @@ header {
     max-height: 408px;
     margin: 0 60px;
     padding-bottom: 66px; }
-  @media (max-width: 1150px) {
+  @media (max-width: 1200px) {
     .about .h2-title {
       padding-top: 0; } }
   @media (max-width: 767px) {
@@ -661,17 +701,25 @@ header {
     width: 100%;
     padding-bottom: 45px; }
   .our-friends .main-cards-container {
+    overflow: hidden;
     margin-top: 43px;
+    margin: 0 10px;
     display: flex;
-    width: 100%;
-    max-width: 995px;
-    margin: 0 10px; }
-  .our-friends .center-container {
+    align-items: center; }
+  .our-friends .cards-wrapper {
+    position: relative;
+    left: -1145px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     width: 100%;
     max-width: 995px; }
+  .our-friends .center-container, .our-friends .left-container, .our-friends .right-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 100%;
+    max-width: 995px;
+    margin: 0 50px; }
   .our-friends .pets-cards-container {
     margin-top: 43px;
     display: flex;
@@ -720,13 +768,19 @@ header {
     height: 270px;
     border-top-right-radius: 9px;
     border-top-left-radius: 9px; }
-  @media (max-width: 1150px) {
+  @media (max-width: 1200px) {
     .our-friends .wrapper-our-pets {
       padding-bottom: 76px; }
     .our-friends .main-cards-container {
       max-width: 580px; }
       .our-friends .main-cards-container .card-3 {
         display: none; }
+    .our-friends .cards-wrapper {
+      left: -640px;
+      max-width: 580px; }
+    .our-friends .center-container, .our-friends .left-container, .our-friends .right-container {
+      max-width: 580px;
+      margin: 0 20px; }
     .our-friends .pets-cards-container {
       margin-top: 13px;
       max-width: 580px; }
@@ -747,6 +801,12 @@ header {
       order: -1; }
       .our-friends .main-cards-container .card-2, .our-friends .main-cards-container .card-3 {
         display: none; }
+    .our-friends .cards-wrapper {
+      left: -300px;
+      max-width: 270px; }
+    .our-friends .center-container, .our-friends .left-container, .our-friends .right-container {
+      max-width: 270px;
+      margin: 0 10px; }
     .our-friends .main-arrow {
       margin: 5px 40px 0 40px; }
     .our-friends .pets-cards-container {
@@ -805,13 +865,13 @@ header {
     background-image: url(./assets/SVG/icon-collars-leashes.svg); }
   .help .sleeping {
     background-image: url(./assets/SVG/icon-sleeping-area.svg); }
-  @media (max-width: 1150px) {
+  @media (max-width: 1200px) {
     .help .wrapper {
       padding: 80px 39px 48px 39px; }
     .help .help-item {
       width: 170px;
       padding: 0 30px 34px 30px; } }
-@media (max-width: 1150px) and (max-width: 767px) {
+@media (max-width: 1200px) and (max-width: 767px) {
   .help .wrapper {
     padding: 40px 0 14px 0; }
   .help .h2-title {
@@ -849,7 +909,7 @@ header {
     margin-bottom: 20px; }
   .donation .additional-text {
     padding-top: 5px; }
-  @media (max-width: 1150px) {
+  @media (max-width: 1200px) {
     .donation .additional-text {
       padding-bottom: 40px; } }
   @media (max-width: 767px) {
@@ -905,7 +965,7 @@ header {
   background-image: url(./assets/SVG/icon-marker.svg);
   width: 22px;
   height: 32px; }
-@media (max-width: 1150px) {
+@media (max-width: 1200px) {
   .footer .wrapper {
     padding: 14px 72px 0 64px; }
   .footer .footer-img {
