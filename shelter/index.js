@@ -75,10 +75,13 @@ const modalOpen = (event) => {
                 popup_parasites.textContent = data[i].parasites;
                 popup_img.src = data[i].modal;
             });
-        
-    }
-
-    popup.classList.toggle("hidden");
+            popup_img.onload = () => {
+                popup.classList.toggle("hidden");
+            };
+    } else {
+        popup.classList.toggle("hidden");
+    }    
+    
     document.body.style.overflow = popup.classList.contains("hidden") ? '' : 'hidden';
 }
 
