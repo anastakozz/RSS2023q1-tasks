@@ -93,6 +93,7 @@ popup.addEventListener("click", modalOpen)
 const pastArr = [];
 const currArr = [];
 const nextArr = [];
+const dopArr = [];
 
 function getRandomIntInc(min,max) {
     min = Math.ceil(min);
@@ -172,34 +173,56 @@ const moveNextRight = () => {
     generateCards(right_container, nextArr);
     moveArr(currArr,pastArr);
     moveArr(nextArr,currArr);
-    cleanId(right_container);
+
     cards_wrapper.classList.add("transition-right");
-    
     cards_wrapper.addEventListener("animationend", () => {
         center_container.innerHTML = right_container.innerHTML;
+        cleanId(right_container);
         cards_wrapper.classList.remove("transition-right");
         generateNextArr();
         generateCards(right_container, nextArr);
+        for (let node of center_container.children){
+        node.addEventListener("click", modalOpen);
+    }
     })
+
+
+    
+
+    
 }
 
 const moveNextLeft = () => {
     generateCards(left_container, nextArr);
     moveArr(currArr,pastArr);
     moveArr(nextArr,currArr);
-    cleanId(left_container);
     cards_wrapper.classList.add("transition-left");
     
+    cards_wrapper.addEventListener("animationend", () => {
+        center_container.innerHTML = left_container.innerHTML;
+        cleanId(left_container);
+        cards_wrapper.classList.remove("transition-left");
+        generateNextArr();
+        generateCards(left_container, nextArr);
+        for (let node of center_container.children){
+        node.addEventListener("click", modalOpen);
+    }
+    })
+
+    
+}
+
+const moveBackLeft = () => {
+    moveArr()
+
+
+    cards_wrapper.classList.add("transition-left");
     cards_wrapper.addEventListener("animationend", () => {
         center_container.innerHTML = left_container.innerHTML;
         cards_wrapper.classList.remove("transition-left");
         generateNextArr();
         generateCards(left_container, nextArr);
     })
-}
-
-const moveBack = () => {
-
 }
 
 
