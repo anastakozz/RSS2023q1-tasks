@@ -176,7 +176,7 @@ const moveNextRight = () => {
     cards_wrapper.classList.add("transition-right");
     
     cards_wrapper.addEventListener("animationend", () => {
-        generateCards(center_container,currArr);
+        center_container.innerHTML = right_container.innerHTML;
         cards_wrapper.classList.remove("transition-right");
         generateNextArr();
         generateCards(right_container, nextArr);
@@ -191,10 +191,10 @@ const moveNextLeft = () => {
     cards_wrapper.classList.add("transition-left");
     
     cards_wrapper.addEventListener("animationend", () => {
-        generateCards(center_container,currArr);
+        center_container.innerHTML = left_container.innerHTML;
         cards_wrapper.classList.remove("transition-left");
         generateNextArr();
-        generateCards(right_container, nextArr);
+        generateCards(left_container, nextArr);
     })
 }
 
