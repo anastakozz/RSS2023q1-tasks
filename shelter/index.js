@@ -90,10 +90,39 @@ popup.addEventListener("click", modalOpen)
 
 
 //slider
-const pastArr = [0,1,2];
-const currArr = [3,4,5];
-const nextArr = [6,7,0];
+const pastArr = [];
+const currArr = [];
+const nextArr = [];
 
+function getRandomIntInc(min,max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+const generateNextArr = () => {
+    nextArr.splice(0,3)
+
+    for (i=0; i<3; i++) {
+        const randomise  = () => {
+            let num = getRandomIntInc(0,7);
+            // console.log(num);
+        if(!nextArr.includes(num) && !currArr.includes(num)) {
+            nextArr.push(num);
+        } else {
+            randomise()
+        }
+        }
+        randomise();
+    }
+    // console.log(arr);
+}
+const moveArr = (arr1, arr2) => {
+    arr2.splice(0,3);
+    for(i=0; i<3; i++){
+        arr2.push(arr1[i]);
+    }
+
+}
 const generateCards = (container, arr) => {
     
     for (let i=0; i<container.children.length; i++) {
@@ -109,24 +138,82 @@ const generateCards = (container, arr) => {
             });
     }  
 }
+const cleanId = (container) => {
+    for (let i=0; i<container.children.length; i++) {
+        container.children[i].removeAttribute('id')
+        // container.children[i].children[0].src = 'default';
+        // container.children[i].children[0].alt = 'default';
+        // container.children[i].children[1].children[0].textContent = 'default';
+    }  
+}
 
-generateCards(left_container, nextArr);
-generateCards(center_container, nextArr);
+function initArrs() {
+    generateNextArr();
+    moveArr(nextArr, currArr);
+    generateNextArr();
+    moveArr(currArr,pastArr);
+    moveArr(nextArr, currArr);
+    generateNextArr();
+    console.log(pastArr,currArr, nextArr);
+}
+initArrs();
+
+generateCards(left_container, pastArr);
+generateCards(center_container, currArr);
 generateCards(right_container, nextArr);
+
 
 const moveLeft = () => {
     cards_wrapper.classList.add("transition-left");
 }
 
-const moveRight = () => {
+
+const moveNextRight = () => {
+    generateCards(right_container, nextArr);
+    moveArr(currArr,pastArr);
+    moveArr(nextArr,currArr);
+    cleanId(right_container);
     cards_wrapper.classList.add("transition-right");
+    
+    cards_wrapper.addEventListener("animationend", () => {
+        generateCards(center_container,currArr);
+        cards_wrapper.classList.remove("transition-right");
+        generateNextArr();
+        generateCards(right_container, nextArr);
+    })
 }
 
-arrow_left.addEventListener("click", moveLeft);
-arrow_right.addEventListener("click", moveRight);
+const moveNextLeft = () => {
+    generateCards(left_container, nextArr);
+    moveArr(currArr,pastArr);
+    moveArr(nextArr,currArr);
+    cleanId(left_container);
+    cards_wrapper.classList.add("transition-left");
+    
+    cards_wrapper.addEventListener("animationend", () => {
+        generateCards(center_container,currArr);
+        cards_wrapper.classList.remove("transition-left");
+        generateNextArr();
+        generateCards(right_container, nextArr);
+    })
+}
 
-cards_wrapper.addEventListener("animationend", () => {
-    cards_wrapper.classList.remove("transition-left");
-    cards_wrapper.classList.remove("transition-right");
-})
+const moveBack = () => {
+
+}
+
+
+
+
+
+arrow_left.addEventListener("click", moveNextLeft);
+arrow_right.addEventListener("click", moveNextRight);
+
+// cards_wrapper.addEventListener("animationend", () => {
+//     cards_wrapper.classList.remove("transition-left");
+//     cards_wrapper.classList.remove("transition-right");
+//     generateCards(center_container,currArr);
+//     generateNextArr();
+//     generateCards(right_container, nextArr);
+// })
 

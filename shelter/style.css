@@ -484,7 +484,7 @@ a {
   .popup-block .popup-list-item {
     list-style-type: none;
     padding-left: 15px;
-    background: url(../../assets/dot.png) no-repeat left center;
+    background: url(./assets/dot.png) no-repeat left center;
     margin: 0 0 11px 0; }
     @media (max-width: 1200px) {
       .popup-block .popup-list-item {
