@@ -402,6 +402,7 @@ a {
   transition: all 0.3s ease-in-out; }
 
 .popup-content {
+  z-index: 2;
   position: absolute;
   max-width: 900px;
   background-color: white;

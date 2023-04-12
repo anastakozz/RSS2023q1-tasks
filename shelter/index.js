@@ -62,6 +62,7 @@ const modalOpen = (event) => {
     let i = event.currentTarget.id;
 
     if (popup.classList.contains("hidden")) {
+        
         const pets = 'pets.json';
         fetch(pets)
             .then(res => res.json())
@@ -78,18 +79,22 @@ const modalOpen = (event) => {
             popup_img.onload = () => {
                 popup.classList.toggle("hidden");
             };
+            document.body.style.overflow =  "hidden";
+            
     } else {
         popup.classList.toggle("hidden");
+        document.body.style.overflow =  "";
     }    
     
-    document.body.style.overflow = popup.classList.contains("hidden") ? '' : 'hidden';
+    // document.body.style.overflow =  "hidden";
+    // // popup.classList.contains("hidden") ? "" :
 }
 
 
 cards.forEach(card => {
     card.addEventListener("click", modalOpen);
 })
-popup.addEventListener("click", modalOpen)
+popup.addEventListener("click", modalOpen, true)
 
 
 //slider
@@ -220,7 +225,6 @@ const moveBackLeft = () => {
 
     const afterAnimEnd2 = () => {
         center_container.innerHTML = left_container.innerHTML;
-        // cleanId(left_container);
         cards_wrapper.classList.remove("transition-left");
         moveArr(currArr, dopArr);
         moveArr(pastArr, currArr);
@@ -271,10 +275,12 @@ const moveRight = () => {
   if (right === 0 ) {
     moveBackRight()
     right = 1;
-    
+    left = 0;
   }  else {
     moveNextRight()
     left = 0;
+    right = 1;
+    
   }
 }
 
@@ -282,9 +288,11 @@ const moveLeft = () => {
     if (left === 0 ) {
       moveBackLeft()
       left = 1;
+      right = 0;
     }  else {
       moveNextLeft()
       right = 0;
+      left = 1;
     }
   }
 
