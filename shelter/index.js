@@ -130,7 +130,7 @@ const moveArr = (arr1, arr2) => {
 const generateCards = (container, arr) => {
     
     for (let i=0; i<container.children.length; i++) {
-        console.log(container.children[i]);
+        // console.log(container.children[i]);
         const pets = 'pets.json';
         fetch(pets)
             .then(res => res.json())
@@ -162,78 +162,141 @@ function initArrs() {
 }
 initArrs();
 
-generateCards(left_container, pastArr);
+
 generateCards(center_container, currArr);
-generateCards(right_container, nextArr);
 
-
-const moveLeft = () => {
-    cards_wrapper.classList.add("transition-left");
-}
+let right = 0;
+let left  = 0;
 
 
 const moveNextRight = () => {
+    generateNextArr();
     generateCards(right_container, nextArr);
-    moveArr(currArr,pastArr);
-    moveArr(nextArr,currArr);
+    moveArr(currArr, pastArr);
+    moveArr(nextArr, currArr);
+    console.log(pastArr,currArr,nextArr);
 
     cards_wrapper.classList.add("transition-right");
-    cards_wrapper.addEventListener("animationend", () => {
+    const afterAnimEnd3 = () => {
         center_container.innerHTML = right_container.innerHTML;
-        cleanId(right_container);
+        // cleanId(right_container);
         cards_wrapper.classList.remove("transition-right");
-        generateNextArr();
-        generateCards(right_container, nextArr);
         for (let node of center_container.children){
         node.addEventListener("click", modalOpen);
     }
-    })
-
-
-    
-
+    cards_wrapper.removeEventListener("animationend", afterAnimEnd3)
+    }
+    cards_wrapper.addEventListener("animationend", afterAnimEnd3)
     
 }
 
 const moveNextLeft = () => {
+    generateNextArr();
     generateCards(left_container, nextArr);
-    moveArr(currArr,pastArr);
-    moveArr(nextArr,currArr);
+    moveArr(currArr, pastArr);
+    moveArr(nextArr, currArr);
+    console.log(pastArr,currArr, nextArr);
+
     cards_wrapper.classList.add("transition-left");
     
-    cards_wrapper.addEventListener("animationend", () => {
+    const afterAnimEnd4 = () => {
         center_container.innerHTML = left_container.innerHTML;
-        cleanId(left_container);
+        // cleanId(left_container);
         cards_wrapper.classList.remove("transition-left");
-        generateNextArr();
-        generateCards(left_container, nextArr);
         for (let node of center_container.children){
         node.addEventListener("click", modalOpen);
     }
-    })
+    cards_wrapper.removeEventListener("animationend", afterAnimEnd4);
 
-    
+    }
+    cards_wrapper.addEventListener("animationend", afterAnimEnd4);
 }
 
 const moveBackLeft = () => {
-    moveArr()
-
-
+    
+    generateCards(left_container, pastArr);
+    
     cards_wrapper.classList.add("transition-left");
-    cards_wrapper.addEventListener("animationend", () => {
+
+    const afterAnimEnd2 = () => {
         center_container.innerHTML = left_container.innerHTML;
+        // cleanId(left_container);
         cards_wrapper.classList.remove("transition-left");
-        generateNextArr();
-        generateCards(left_container, nextArr);
-    })
+        moveArr(currArr, dopArr);
+        moveArr(pastArr, currArr);
+        moveArr(dopArr, pastArr);
+        generateNextArr()
+        for (let node of center_container.children){
+            node.addEventListener("click", modalOpen);
+        }
+        console.log(pastArr,currArr, nextArr);
+        cards_wrapper.removeEventListener("animationend", afterAnimEnd2);
+    }
+   
+    cards_wrapper.addEventListener("animationend", afterAnimEnd2);
+
+    // arrow_left.removeEventListener("click", moveBackLeft);
+    // // arrow_left.addEventListener("click", moveNextLeft);
+    // // arrow_right.removeEventListener("click", moveNextRight);
+    // // arrow_right.addEventListener("click", moveBackRight);
+    
 }
 
+const moveBackRight = () => {
+    dopArr.slice(0,3);
+    generateCards(right_container, pastArr);
+    
+    cards_wrapper.classList.add("transition-right");
+
+    const afterAnimEnd = () => {
+        center_container.innerHTML = right_container.innerHTML;
+        cards_wrapper.classList.remove("transition-right");
+        moveArr(currArr, dopArr);
+        moveArr(pastArr, currArr);
+        moveArr(dopArr, pastArr);
+        generateNextArr()
+        for (let node of center_container.children){
+            node.addEventListener("click", modalOpen);
+        }
+        console.log(pastArr,currArr, nextArr);
+        cards_wrapper.removeEventListener("animationend", afterAnimEnd);
+    }
+
+    cards_wrapper.addEventListener("animationend", afterAnimEnd);
+    
+}
+
+const moveRight = () => {
+    
+  if (right === 0 ) {
+    moveBackRight()
+    right = 1;
+    
+  }  else {
+    moveNextRight()
+    left = 0;
+  }
+}
+
+const moveLeft = () => {
+    if (left === 0 ) {
+      moveBackLeft()
+      left = 1;
+    }  else {
+      moveNextLeft()
+      right = 0;
+    }
+  }
+
+
+arrow_left.addEventListener("click", moveLeft);
+arrow_right.addEventListener("click", moveRight);
 
 
 
 
-arrow_left.addEventListener("click", moveNextLeft);
-arrow_right.addEventListener("click", moveNextRight);
+// arrow_left.addEventListener("click", moveBackLeft, true);
+// arrow_right.addEventListener("click", moveBackRight, true);
 
 // cards_wrapper.addEventListener("animationend", () => {
 //     cards_wrapper.classList.remove("transition-left");
