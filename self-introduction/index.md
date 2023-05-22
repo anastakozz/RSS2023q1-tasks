@@ -1,3 +1,5 @@
+https://youtu.be/by1GkpRTGP4
+
 Hi! My name is Anastasia Kozlova, and I’m a junior frontend developer!
 Now I’m attending the Frontend course in RSS and getting more and more charmed of this profession with every task!
 
