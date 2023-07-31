@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/league.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>Accessibility</h1>
+          <h2>in frontend</h2>
+        </section>
+        <section>
+          <h3>Agenda</h3>
+          <ol>
+            <li><p class="fragment">What is accessibility</p></li>
+            <li>
+              <p class="fragment">3 main steps to make you code accessible</p>
+            </li>
+            <li><p class="fragment">Decisions for your project</p></li>
+            <li><p class="fragment">Used and useful links</p></li>
+          </ol>
+        </section>
+        <section>
+          <h3>What is accessibility</h3>
+          <img
+            src="./assets/disability-considerations.jpeg"
+            alt="disability-types"
+            width="250"
+          />
+        </section>
+        <section>
+          <h3>3 basic steps to make your code accessible</h3>
+        </section>
+        <section>
+          <h3>step 1: Write semantic html</h3>
+          <section>
+            <img
+              src="./assets/original.png"
+              alt="semantic example"
+              width="400"
+            />
+          </section>
+          <section>
+            <h4>Use landmarks:</h4>
+            <pre
+              class="fragment"
+            ><code><script type="text/template"><main></script></code></pre>
+            <pre
+              class="fragment"
+            ><code><script type="text/template"><nav></script></code></pre>
+            <pre
+              class="fragment"
+            ><code><script type="text/template"><aside></script></code></pre>
+            <pre
+              class="fragment"
+            ><code><script type="text/template"><header></script></code></pre>
+            <pre
+              class="fragment"
+            ><code><script type="text/template"><footer></script></code></pre>
+            <pre
+              class="fragment"
+            ><code><script type="text/template"><section></script></code></pre>
+            <pre
+              class="fragment"
+            ><code><script type="text/template"><article></script></code></pre>
+          </section>
+          <section>
+            <h4>Use semantic tags</h4>
+              <dl class="fragment fade-up r-hstack justify-between" width="500">
+                <dt>role:</dt>
+                <dd>The element’s type</dd>
+              </dl>
+              <dl class="fragment fade-up r-hstack justify-between">
+                <dt>name:</dt>
+                <dd>The element’s computed label</dd>
+              </dl>
+              <dl class="fragment fade-up r-hstack justify-between">
+                <dt>value (optional):</dt>
+                <dd>Any input values</dd>
+              </dl>
+              <dl class="fragment fade-up r-hstack justify-between">
+                <dt>status (optional):</dt>
+                <dd>The element’s current status</dd>
+              </dl>
+
+            <a href="https://www.w3.org/TR/wai-aria-1.1/" class="fragment fade-up"
+              >WAI-ARIA</a
+            >
+          </section>
+          <section>
+            <h4>Organize headings properly</h4>
+            <p class="fragment">Please, do not use heading for styling!</p>
+            <pre
+              class="fragment"
+            ><code><script type="text/template"><h1> ..... <h6></script></code></pre>
+          </section>
+          <section>
+            <h4>Create appropriate table markup</h4>
+            <ul>
+              <li><p>"scope" attribute</p></li>
+              <li>
+                <pre><code data-noescape><script type="text/template"><caption></script></code></pre>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h4>Label and name your elements</h4>
+            <ul>
+              <li class="fragment">
+                <pre><code data-noescape=""><script type="text/template"><title></script></code></pre>
+              </li>
+
+              <li class="fragment">
+                <pre><code data-noescape=""><script type="text/template">alt = '...'</script></code></pre>
+              </li>
+
+              <li class="fragment">Form elements have associated labels.</li>
+
+              <li class="fragment">Button and links have discernible names</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <h3>step 2: Use clear CSS and styling</h3>
+          <section>
+            <h4>Be careful with colors</h4>
+            <img src="./assets/color-usage.png" alt="color-usage" width="400" />
+          </section>
+          <section>
+            <h4>Prefer rem rather then px</h4>
+            <img
+              src="./assets/px-rem.webp"
+              alt="px vs rem comparison"
+              width="400"
+            />
+          </section>
+          <section>
+            <h4>Provide sufficient color contrast</h4>
+            <img
+              src="./assets/high-vs-low-contrast-1.png"
+              alt="high-vs-low-contrast"
+              width="400"
+            />
+          </section>
+        </section>
+        <section>
+          <h3>step 3: Use clear and clean content</h3>
+          <section>
+            <h4>Keep multimedia accessible</h4>
+            <ul>
+              <li class="fragment">Create custom audio and video controls</li>
+              <li class="fragment">Provide Audio transcripts</li>
+              <li class="fragment">Provide Video text tracks</li>
+            </ul>
+          </section>
+          <section>
+            <h4>Use clear language</h4>
+            <img src="./assets/KISS.jpeg" alt="simple-ideas" width="400" />
+          </section>
+          <section>
+            <h4>Provide deciphering for abbreviations</h4>
+            <ul>
+              <li class="fragment">Instead of writing 5–7, write 5 to 7</li>
+              <li class="fragment">Instead of writing Jan, write January</li>
+              <li class="fragment">
+                <pre><code><script type="text/template"><abbr></script></code></pre>
+              </li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <h3>Some more decisions for your project:</h3>
+          <section>
+            <ol>
+              <li class="fragment">Create skip links</li>
+              <li class="fragment">Use empty alt property</li>
+              <li class="fragment">Control focus with tabindex</li>
+              <li class="fragment">
+                Properly manage visibility of off-screen elements
+              </li>
+              <li></li>
+            </ol>
+          </section>
+        </section>
+        <section>
+          <h3>Used and useful links</h3>
+          <ul>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility"
+                >MDN</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://medium.com/@bdov_/front-end-development-web-accessibility-checklist-1c74a503f0e0"
+                >Accessibility checklist</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.smashingmagazine.com/2021/03/complete-guide-accessible-front-end-components/"
+                >Accessible components guide</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://medium.com/capital-one-tech/building-accessible-front-ends-298c03e5bd86"
+                >Building Accessible Front-Ends</a
+              >
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>
